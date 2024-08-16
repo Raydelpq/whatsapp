@@ -36,7 +36,7 @@ const sendMessage = async (req, res = response) => {
  * @param {Object} req - Objeto de solicitud (request).
  * @param {Object} res - Objeto de respuesta (response).
  */
-const sendFile = async (req, res) => {
+const sendFileUser = async (req, res) => {
     const { chatId, file, caption, grupo } = req.body;
 
     try {
@@ -118,6 +118,6 @@ const sendFileToGroup = async (req, res) => {
 module.exports = {
     sendMessage,
     sendMessageToGroup,
-    sendFile,
+    sendFileUser,
     sendFileToGroup,
 };

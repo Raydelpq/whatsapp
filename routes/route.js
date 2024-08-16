@@ -1,7 +1,7 @@
 var { check } = require("express-validator");
 const { Router } = require("express");
 const router = Router();
-const { sendMessage, sendMessageToGroup, sendFile, sendFileToGroup } = require("../controllers/clientControllers");
+const { sendMessage, sendMessageToGroup, sendFileUser, sendFileToGroup } = require("../controllers/clientControllers");
 const { validarCampos } = require("../middlewares/validar-campos");
 
 
@@ -24,7 +24,7 @@ router.post("/send/group", [
 
 router.post('/send/file',[
   check("chatId", "El grupo es obligatorio").not().isEmpty(),
-],sendFile);
+],sendFileUser);
 
 router.post('/send/file/group',[
   check("chatId", "El grupo es obligatorio").not().isEmpty(),

@@ -1,6 +1,6 @@
 const { Client, LocalAuth, MessageMedia } = require("whatsapp-web.js");
 const qrcode = require('qrcode-terminal');
-const { initPusher, emitEventPusher } = require("../controllers/pusherController");
+//const { initPusher, emitEventPusher } = require("../controllers/pusherController");
 let client = null;
 
 /**
@@ -8,7 +8,7 @@ let client = null;
  * @returns {Promise<boolean>} - Indica si la inicialización fue exitosa.
  */
 const initWhatsapp = async () => {
-    const pusher = await initPusher();
+    //const pusher = await initPusher();
 
     client = new Client({
         authStrategy: new LocalAuth(),
@@ -34,7 +34,7 @@ const initWhatsapp = async () => {
 
         // Enviar Qr a un canal por pusher
         const data = { message_qr: qr };
-        emitEventPusher(pusher, 'public', process.env.CANAL, data);
+        //emitEventPusher(pusher, 'public', process.env.CANAL, data);
 
         // Mostrar Qr en consola
         qrcode.generate(qr, {small: true});

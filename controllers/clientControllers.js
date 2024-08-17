@@ -37,11 +37,11 @@ const sendMessage = async (req, res = response) => {
  * @param {Object} res - Objeto de respuesta (response).
  */
 const sendFileUser = async (req, res) => {
-    const { chatId, file, caption, grupo } = req.body;
+    const { chatId, file, caption } = req.body;
 
     try {
         // Llama a la función sendFile para enviar el archivo
-        const respuesta = await sendFile (chatId, file, caption, grupo);
+        const respuesta = await sendFile (chatId, file, caption);
 
         // Verifica la respuesta y envía el mensaje correspondiente
         if (respuesta) {

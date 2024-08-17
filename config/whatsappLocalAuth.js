@@ -124,7 +124,7 @@ const sendMessageGroup = async (groupID, message) => {
 const sendFile = async (chatId, file, caption) => {
     try {
 
-        chatId += chatId.endsWith('@c.us') ? chatId : `${chatId}@c.us`;;
+        chatId = chatId.endsWith('@c.us') ? chatId : `${chatId}@c.us`;;
         // Crea un objeto de media desde la ruta del archivo
         const media = MessageMedia.fromFilePath(file);
 

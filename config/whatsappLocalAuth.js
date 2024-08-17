@@ -129,7 +129,7 @@ const sendFile = async (chatId, file, caption) => {
         const media = MessageMedia.fromFilePath(file);
 
         // Envía el archivo al chat de WhatsApp con la descripción
-        await client.sendMessage(chatId, media, { caption: caption });
+        return await client.sendMessage(chatId, media, { caption: caption });
 
     } catch (error) {
         // Maneja y muestra cualquier error que ocurra
